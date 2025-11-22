@@ -57,7 +57,7 @@ USER_CONFIG = {
     }
 CACHE_PATH = USER_CONFIG["ROOT_DIR"].split()[0]+'_embeddings.npz'
 # embedding saving / this saves the embeddings of imput dataset images.
-# It is computed once. If you re-run, the module will load them, saving valuable time.
+# It is computed once. If you re-run, the module will load them, saving significant time.
 ```
 read carefully the user config instructions inside and specify your desired configurations.
 
