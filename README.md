@@ -41,8 +41,8 @@ shifted_data/
 ```bash
 USER_CONFIG = {
 
-    "VISUALIZER": 'ON', # When terminates, it will create a vizual for inspecting the split; similar to the one above.
-    # Put 'OFF' else.
+    "VISUALIZER": 1, # When terminates, it will create a vizual for inspecting the split; similar to the one above.
+    # Put 0 for off.
 
     "SPLIT_RATIO" : 0.3, # The desired <train/val> to <test> sets spliting ratio.
     # E.g. this will produce a 30% <train/val> and 70% <test> ratio split from the initial unsplit data size.
