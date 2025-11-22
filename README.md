@@ -3,7 +3,7 @@ A Research-oriented dataset-creator tool: Creates shifted-variants of a given da
 
 ![jsd_partition_skin(1)](https://github.com/user-attachments/assets/6c10adc3-1a9a-4a06-a505-4b24a1be115a)
 
-##How it works:
+## How it works:
 
 In brief, it works via a clustering-based approach exploiting the Jensen–Shannon divergence (JSD) as the core partitioning measure/metric; JSD measures the relative entropy in information given two distributions.
 The algorithm begins with partitioning the dataset into two subsets. The process continues iteratively by computing the centroids of the two sets and reassigning the instances closest to each one. This process ends up with two high-JSD-separated sets corresponding to the train vs test. The algorithm converges extremely fast.
