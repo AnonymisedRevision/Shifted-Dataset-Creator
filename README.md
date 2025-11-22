@@ -39,28 +39,27 @@ shifted_data/
 
 1. Open CONFIGS.py -->
 ```bash
-CONFIG = {
+USER_CONFIG = {
 
     "VISUALIZER": 'ON', # When terminates, it will create a vizual for inspecting the split; similar to the one above.
     # Put 'OFF' else.
 
-    SPLIT_RATIO = 0.3 # The desired <train/val> to <test> sets spliting ratio.
+    "SPLIT_RATIO" : 0.3, # The desired <train/val> to <test> sets spliting ratio.
     # E.g. this will produce a 30% <train/val> and 70% <test> ratio split from the initial unsplit data size.
 
-    SHIFT_MAGNITUDE = 0 # Controls the JSD magnitude for varying OOD shift testing challenge.
+    "SHIFT_MAGNITUDE" : 0, # Controls the JSD magnitude for varying OOD shift testing challenge.
     # Vary from 0 to 0.5 with decreasing shifting effect.
     # 0 brings the highest JSD (the most challenging and hardest generalization task).
     # Minimum JSD corresponds for 0.5 (almost similar to i.i.d sampling; easy generalization task).
 
-    ROOT_DIR = "data"  # Change this to your dataset root, in the format described above.
-    OUTPUT_DIR = "shifted_data" # Output path
-
-    CACHE_PATH = ROOT_DIR.split()[0]+'_embeddings.npz'  # embedding saving / this saves the embeddings of imput dataset images.
-    # It is computed once. If you re-run, the module will load them, saving valuable time.
-
+    "ROOT_DIR" : "data",  # Change this to your dataset root, in the format described above.
+    "OUTPUT_DIR" : "shifted_data", # Output path
     }
+CACHE_PATH = USER_CONFIG["ROOT_DIR"].split()[0]+'_embeddings.npz'
+# embedding saving / this saves the embeddings of imput dataset images.
+# It is computed once. If you re-run, the module will load them, saving valuable time.
 ```
-read carefully the config instructions inside and specify your desired configurations.
+read carefully the user config instructions inside and specify your desired configurations.
 
 2. Then, just run:
 ```bash 
