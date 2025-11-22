@@ -47,12 +47,14 @@ USER_CONFIG = {
     "SPLIT_RATIO" : 0.3, # The desired <train/val> to <test> sets spliting ratio.
     # E.g. this will produce a 30% <train/val> and 70% <test> ratio split from the initial unsplit data size.
 
-    "SHIFT_MAGNITUDE" : 0, # Controls the JSD magnitude for varying OOD shift testing challenge.
+    "SHIFT_MAGNITUDE" : 0.0, # Controls the JSD magnitude for varying OOD shift testing challenge.
     # Vary from 0 to 0.5 with decreasing shifting effect.
     # 0 brings the highest JSD (the most challenging and hardest generalization task).
     # Minimum JSD corresponds for 0.5 (almost similar to i.i.d sampling; easy generalization task).
 
-    "ROOT_DIR" : "data",  # Change this to your dataset root, in the format described above.
+    "ROOT_DIR" : "tiny data sample",  # Change this to your dataset root. 
+    # Data must have the structure skeleton presented in "Input/Output data structure" of main GitHub page, 
+    # with jpg images as instances.
     "OUTPUT_DIR" : "shifted_data", # Output path
     }
 CACHE_PATH = USER_CONFIG["ROOT_DIR"].split()[0]+'_embeddings.npz'
