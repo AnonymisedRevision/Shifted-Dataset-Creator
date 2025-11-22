@@ -41,7 +41,7 @@ shifted_data/
 ```bash
 GENERAL_CONFIG = {
 
-    "DEBUG": 1, # <----- If want to debug (very fast run), then put here: 1 // else for full put: 0
+    "VISUALIZER": 'ON', # When terminates, it will create a vizual for inspecting the split; similar to the one above. // Put 'OFF' else.
 
     "ROOT_PATH" :'../data/DISTRIBUTIONAL_DRIFTED', # <-----  replace < data > with the name of root datafolder, e.g. SKIN_CANCER
     # Due to size restrictions in GitHub download from:
