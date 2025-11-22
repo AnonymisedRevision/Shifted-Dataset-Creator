@@ -67,6 +67,6 @@ main.py
 ```
 and will produce the output folder format described above.
 
-3. We provide a sample set in < data > folder for debugging-running before want to actually apply in you datasets.
+3. We provide a tiny sample set in < data > folder for debugging-running purposes before want to actually apply in your datasets.
 
 
