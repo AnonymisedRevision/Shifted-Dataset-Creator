@@ -39,29 +39,26 @@ shifted_data/
 
 1. Open CONFIGS.py -->
 ```bash
-GENERAL_CONFIG = {
+CONFIG = {
 
-    "VISUALIZER": 'ON', # When terminates, it will create a vizual for inspecting the split; similar to the one above. // Put 'OFF' else.
+    "VISUALIZER": 'ON', # When terminates, it will create a vizual for inspecting the split; similar to the one above.
+    # Put 'OFF' else.
 
-    "ROOT_PATH" :'../data/DISTRIBUTIONAL_DRIFTED', # <-----  replace < data > with the name of root datafolder, e.g. SKIN_CANCER
-    # Due to size restrictions in GitHub download from:
-    # LINK:
-    # https://drive.google.com/file/d/1RcZsiCOuFFWXuEoiVptNvP7lDTGWlhvh/view?usp=sharing
+    SPLIT_RATIO = 0.3 # The desired <train/val> to <test> sets spliting ratio.
+    # E.g. this will produce a 30% <train/val> and 70% <test> ratio split from the initial unsplit data size.
 
-    "STORAGE_PATH" :'../_models_storage', # your output storage folder path / this will be used next for ProtoNeX
-    "train_dir" :'train',
-    "val_dir" :'val',
-    "test_dir" :'test',
+    SHIFT_MAGNITUDE = 0 # Controls the JSD magnitude for varying OOD shift testing challenge.
+    # Vary from 0 to 0.5 with decreasing shifting effect.
+    # 0 brings the highest JSD (the most challenging and hardest generalization task).
+    # Minimum JSD corresponds for 0.5 (almost similar to i.i.d sampling; easy generalization task).
+
+    ROOT_DIR = "data"  # Change this to your dataset root, in the format described above.
+    OUTPUT_DIR = "shifted_data" # Output path
+
+    CACHE_PATH = ROOT_DIR.split()[0]+'_embeddings.npz'  # embedding saving / this saves the embeddings of imput dataset images.
+    # It is computed once. If you re-run, the module will load them, saving valuable time.
+
     }
-
-# left values are for full run | right values for fast run (debuging if was set with 1)
-GenE_CONFIG = {
-    "SIZE": [224, 64][GENERAL_CONFIG["DEBUG"]], # images size // good results also the 144 size.
-    "N": [50, 10][GENERAL_CONFIG["DEBUG"]], # number of generated models / size of output model pool M
-    "G": [5, 2][GENERAL_CONFIG["DEBUG"]], # number of total generations
-    }
-sel = int (GenE_CONFIG['N']/GenE_CONFIG['G']) # number of geneticaly evolved selected networks per generation --> which are progressively stored into the M output folder
-N_g = [ GenE_CONFIG['N'],  GenE_CONFIG['N'] // 2 ][GENERAL_CONFIG["DEBUG"]] # number of randomly selected parent pairs
 ```
 read carefully the config instructions inside and specify your desired configurations.
 
@@ -70,5 +67,7 @@ read carefully the config instructions inside and specify your desired configura
 main.py
 ```
 and will produce the output folder format described above.
+
+3. We provide a sample set in < data > folder for debugging-running before want to actually apply in you datasets.
 
 
