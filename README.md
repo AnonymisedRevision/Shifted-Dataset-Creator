@@ -1,5 +1,5 @@
 # Distribution-Shifted-Dataset-Creator
-A Research-oriented dataset-creator tool: Creates shifted-variants of a given dataset for simulating realistic/challenging distributional shifted environments (out-off distribution conditions) for benchmarking ML models' robustness ability in any given task.
+Creates shifted-variants of a given dataset for simulating realistic/challenging distributional shifted environments (out-off distribution conditions) for benchmarking ML models' robustness ability in any given task.
 
 ![jsd_partition_skin(1)](https://github.com/user-attachments/assets/6c10adc3-1a9a-4a06-a505-4b24a1be115a)
 
